@@ -1,5 +1,7 @@
 # Tennis market timing and historical quote audit
 
+For the September 28 API review, score-based entry hypotheses, current data-rights limits and proposed CSV recorder, see [Tennis in-play pricing and API research](TENNIS_LIVE_TRADING_RESEARCH.md). The earlier audit below preserves its original scope and findings.
+
 Research date: September 25, 2026. Research and proposal only: no tennis quote files were downloaded or processed locally, no trading occurred, and no tennis execution backtest has been established. Any collection below must run on a genuine GitHub-hosted runner. Azure training remains a separate, explicitly authorized experiment.
 
 Point sequences can support a model of the probability of winning the next point, game, set or match conditional on the score and server. They cannot establish profitability from entering after a serve unless we know when the serve or point became observable and which executable prices remained available after the resulting decision and exchange delay. Scheduled match time plus point number is insufficient.
