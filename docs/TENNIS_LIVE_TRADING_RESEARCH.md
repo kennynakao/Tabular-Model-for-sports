@@ -88,6 +88,22 @@ The [Developer Agreement](https://kalshi-public-docs.s3.amazonaws.com/Kalshi-Dev
 
 ## The second feed: tennis state
 
+### Zero-additional-cost option, reviewed September 28
+
+The owner prefers a free route. A limited prototype can use synthetic scoring calculations, occasional live-score snapshots, permitted public quote access and paper decisions. No paid provider, funded trading account, GPU or new paid cloud resource is needed for that scope. This does not establish a free complete feed suitable for racing the next serve.
+
+[Live Tennis API](https://livetennisapi.com/subscribe/free), a different provider from API-Tennis below, advertises a permanent free tier with no card: 100 requests/day and 30/minute. Its [live-data documentation](https://livetennisapi.com/tennis-live-data-api) includes sets, games, points, server and tiebreak state. Completed history, point-event records and streaming are paid capabilities. No account was created and actual coverage/latency has not been tested. All fields must be checked against the reference schema rather than inferred from names.
+
+At one page per refresh, polling every 30 seconds uses 100 calls in 50 minutes. Across two hours, the same allowance permits roughly one call every 72 seconds before discovery, pagination and retries. Use fewer scheduled observations and manual score confirmation for an initial experiment; missing points remain missing. Do not rotate accounts to exceed the cap.
+
+Its [terms](https://livetennisapi.com/terms) permit use within applications but prohibit raw bulk republication and limit retained data to operational need. Free access is not permission for a public CSV archive or indefinite model-training history. Confirm retention/model scope before collecting a research archive; keep restricted observations out of public releases.
+
+[Kalshi public REST](https://docs.kalshi.com/getting_started/quick_start_market_data) requires no key for documented market/book reads. Its model-use and sharing restrictions above still apply. The [Kalshi demo](https://docs.kalshi.com/getting_started/demo_env) supplies mock funds for API tests; demo prices/fills are not evidence of a real-market edge. Public Polymarket price streams are another access lead, subject to their terms; their sports stream is not a verified complete tennis point feed.
+
+[Standard GitHub-hosted runners in public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions) have free execution minutes. Storage, larger runners and private-workflow quotas are separate. Keep jobs finite, avoid paid runners/GPU, and verify storage/quota and zero-spend controls before dispatch. Public compute must not expose restricted data through logs, artifacts or releases. Nothing in this addendum deploys a collector or changes billing settings.
+
+### More detailed paid feeds, if later justified
+
 Kalshi's documented [game-stats coverage](https://docs.kalshi.com/api-reference/live-data/get-game-stats) does not include tennis. Generic live-data endpoints do not establish point-level tennis/server coverage. We need an independent permitted feed.
 
 | Candidate | What is documented | Practical limit |
